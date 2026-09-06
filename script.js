@@ -1,75 +1,66 @@
-const howTo = document.getElementById("howto");
-const overlay = document.getElementById("overlay");
-const close = document.getElementById("close");
+const howBtn = document.getElementById("howBtn");
+const closeBtn = document.getElementById("closeBtn");
+const howOverlay = document.getElementById("howOverlay");
 
-const begin = document.getElementById("begin");
-const loading = document.getElementById("loading");
-const progress = document.getElementById("progress");
-const loadingText = document.getElementById("loading-text");
+const beginBtn = document.getElementById("beginBtn");
+const loadingScreen = document.getElementById("loadingScreen");
+const loadingProgress = document.getElementById("loadingProgress");
+const loadingText = document.getElementById("loadingText");
 
 
-// how to play
+// ---------------- how to play ----------------
 
-howTo.addEventListener("click", () => {
-    overlay.classList.add("active");
+howBtn.addEventListener("click", () => {
+  howOverlay.classList.add("active");
 });
 
-close.addEventListener("click", () => {
-    overlay.classList.remove("active");
+closeBtn.addEventListener("click", () => {
+  howOverlay.classList.remove("active");
 });
 
-overlay.addEventListener("click", (event) => {
-    if (event.target === overlay) {
-        overlay.classList.remove("active");
+howOverlay.addEventListener("click", (event) => {
+  if (event.target === howOverlay) {
+    howOverlay.classList.remove("active");
+  }
+});
+
+
+// ---------------- begin mission ----------------
+
+beginBtn.addEventListener("click", () => {
+
+  loadingScreen.classList.add("active");
+
+  let progress = 0;
+
+  const loadingMessages = [
+    "preparing dive...",
+    "checking equipment...",
+    "calibrating scanner...",
+    "entering the water...",
+    "descending...",
+    "locating mission zone...",
+    "mission ready."
+  ];
+
+  const interval = setInterval(() => {
+
+    progress += Math.random() * 4 + 1;
+
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(interval);
     }
-});
 
+    loadingProgress.style.width = `${progress}%`;
 
-// begin mission
+    const messageIndex = Math.min(
+      Math.floor(progress / 16),
+      loadingMessages.length - 1
+    );
 
-begin.addEventListener("click", () => {
+    loadingText.textContent = loadingMessages[messageIndex];
 
-    loading.classList.add("active");
-
-    let value = 0;
-
-    const messages = [
-        "preparing dive...",
-        "checking equipment...",
-        "entering the water...",
-        "descending...",
-        "mission ready."
-    ];
-
-    const interval = setInterval(() => {
-
-        value += 2;
-
-        progress.style.width = `${value}%`;
-
-        if (value < 25) {
-            loadingText.textContent = messages[0];
-        } else if (value < 45) {
-            loadingText.textContent = messages[1];
-        } else if (value < 65) {
-            loadingText.textContent = messages[2];
-        } else if (value < 90) {
-            loadingText.textContent = messages[3];
-        } else {
-            loadingText.textContent = messages[4];
-        }
-
-        if (value >= 100) {
-
-            clearInterval(interval);
-
-            // temporary until we build the actual game
-            setTimeout(() => {
-                loadingText.textContent = "mission ready.";
-            }, 300);
-
-        }
-
-    }, 35);
+  }, 100);
 
 });
