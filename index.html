@@ -1,24 +1,152 @@
-<h1>
-    mission
-    <span>aurelia</span>
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mission aurelia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<p class="mission-label">marine restoration initiative</p>
+<body>
 
-<p class="tagline">
-    restore what lies beneath.
-</p>
+    <div class="home">
 
-<button class="start-button">
-    <span>▶</span>
-    begin mission
-</button>
+        <!-- underwater light -->
+        <div class="sun-rays"></div>
 
-<button class="secondary-button">
-    how to play
-</button>
+        <!-- floating particles -->
+        <div class="particles">
+            <i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i>
+        </div>
 
-<div class="mission-status">
-    <span class="status-dot"></span>
-    mission status: awaiting deployment
-</div>
+        <!-- bubbles -->
+        <div class="bubbles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- distant fish -->
+        <div class="fish fish-one">◀</div>
+        <div class="fish fish-two">◀</div>
+        <div class="fish fish-three">◀</div>
+
+        <!-- title -->
+        <section class="title">
+
+            <p class="eyebrow">a marine restoration project</p>
+
+            <h1>
+                mission
+                <strong>aurelia</strong>
+            </h1>
+
+            <p class="subtitle">
+                restore what lies beneath.
+            </p>
+
+            <div class="buttons">
+
+                <button class="begin" id="begin">
+                    <span>↓</span>
+                    begin mission
+                </button>
+
+                <button class="howto" id="howto">
+                    how to play
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- little bottom text -->
+        <p class="bottom-note">
+            the ocean is waiting.
+        </p>
+
+        <!-- ocean floor -->
+        <div class="seafloor">
+
+            <div class="plant plant-one"></div>
+            <div class="plant plant-two"></div>
+            <div class="plant plant-three"></div>
+            <div class="plant plant-four"></div>
+
+            <div class="rock rock-one"></div>
+            <div class="rock rock-two"></div>
+
+            <!-- trash -->
+            <div class="trash bottle">▱</div>
+            <div class="trash can">○</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- how to play panel -->
+    <div class="overlay" id="overlay">
+
+        <div class="how-panel">
+
+            <button class="close" id="close">×</button>
+
+            <p class="panel-label">mission briefing</p>
+
+            <h2>how to play</h2>
+
+            <div class="instructions">
+
+                <div>
+                    <span>01</span>
+                    <p>explore the ocean and look for waste.</p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <p>collect as much rubbish as you can.</p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <p>help restore the marine ecosystem.</p>
+                </div>
+
+            </div>
+
+            <p class="controls">
+                mouse / keyboard controls will appear during the mission.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- transition screen -->
+    <div class="loading-screen" id="loading">
+
+        <div class="loading-content">
+
+            <p>mission aurelia</p>
+
+            <div class="loading-line">
+                <span id="progress"></span>
+            </div>
+
+            <small id="loading-text">preparing dive...</small>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
