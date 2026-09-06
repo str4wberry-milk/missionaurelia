@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #031d2a;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+}
+
+button {
+    font: inherit;
+}
+
+.home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% -20%,
+            #b8f1f0 0%,
+            #69c5d1 20%,
+            #217b94 48%,
+            #0b435d 73%,
+            #032535 100%
+        );
+}
+
+
+/* =========================
+   sunlight
+========================= */
+
+.sun-rays {
+    position: absolute;
+    top: -15%;
+    left: 50%;
+
+    width: 75vw;
+    height: 120vh;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            75deg,
+            transparent 35%,
+            rgba(231, 255, 253, .16) 47%,
+            transparent 59%
+        );
+
+    filter: blur(12px);
+
+    animation: rays 9s ease-in-out infinite alternate;
+}
+
+@keyframes rays {
+    from {
+        transform: translateX(-53%) rotate(-2deg);
+    }
+
+    to {
+        transform: translateX(-47%) rotate(2deg);
+    }
+}
+
+
+/* =========================
+   particles
+========================= */
+
+.particles i {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: rgba(220, 255, 255, .5);
+
+    animation: drift linear infinite;
+}
+
+.particles i:nth-child(1) { left: 7%; top: 70%; animation-duration: 12s; }
+.particles i:nth-child(2) { left: 14%; top: 40%; animation-duration: 16s; }
+.particles i:nth-child(3) { left: 21%; top: 82%; animation-duration: 13s; }
+.particles i:nth-child(4) { left: 29%; top: 60%; animation-duration: 18s; }
+.particles i:nth-child(5) { left: 38%; top: 76%; animation-duration: 14s; }
+.particles i:nth-child(6) { left: 47%; top: 32%; animation-duration: 11s; }
+.particles i:nth-child(7) { left: 56%; top: 69%; animation-duration: 17s; }
+.particles i:nth-child(8) { left: 64%; top: 45%; animation-duration: 13s; }
+.particles i:nth-child(9) { left: 73%; top: 77%; animation-duration: 19s; }
+.particles i:nth-child(10) { left: 81%; top: 53%; animation-duration: 12s; }
+.particles i:nth-child(11) { left: 88%; top: 72%; animation-duration: 15s; }
+.particles i:nth-child(12) { left: 93%; top: 35%; animation-duration: 17s; }
+.particles i:nth-child(13) { left: 33%; top: 25%; animation-duration: 20s; }
+.particles i:nth-child(14) { left: 69%; top: 20%; animation-duration: 16s; }
+.particles i:nth-child(15) { left: 4%; top: 25%; animation-duration: 14s; }
+
+@keyframes drift {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .7;
+    }
+
+    80% {
+        opacity: .4;
+    }
+
+    100% {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   bubbles
+========================= */
+
+.bubbles span {
+    position: absolute;
+    bottom: -30px;
+
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 50%;
+
+    animation: bubbleRise linear infinite;
+}
+
+.bubbles span:nth-child(1) {
+    left: 12%;
+    width: 9px;
+    height: 9px;
+    animation-duration: 9s;
+}
+
+.bubbles span:nth-child(2) {
+    left: 26%;
+    width: 5px;
+    height: 5px;
+    animation-duration: 12s;
+}
+
+.bubbles span:nth-child(3) {
+    left: 43%;
+    width: 12px;
+    height: 12px;
+    animation-duration: 15s;
+}
+
+.bubbles span:nth-child(4) {
+    left: 67%;
+    width: 7px;
+    height: 7px;
+    animation-duration: 11s;
+}
+
+.bubbles span:nth-child(5) {
+    left: 79%;
+    width: 13px;
+    height: 13px;
+    animation-duration: 17s;
+}
+
+.bubbles span:nth-child(6) {
+    left: 91%;
+    width: 5px;
+    height: 5px;
+    animation-duration: 10s;
+}
+
+@keyframes bubbleRise {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .5;
+    }
+
+    100% {
+        transform: translateY(-110vh) translateX(25px);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   fish
+========================= */
+
+.fish {
+    position: absolute;
+
+    color: rgba(3, 38, 53, .32);
+
+    animation: swim linear infinite;
+}
+
+.fish-one {
+    top: 29%;
+    left: -40px;
+    font-size: 28px;
+    animation-duration: 20s;
+}
+
+.fish-two {
+    top: 57%;
+    left: -40px;
+    font-size: 17px;
+    animation-duration: 27s;
+    animation-delay: 5s;
+}
+
+.fish-three {
+    top: 18%;
+    left: -40px;
+    font-size: 12px;
+    animation-duration: 24s;
+    animation-delay: 11s;
+}
+
+@keyframes swim {
+    to {
+        transform: translateX(110vw);
+    }
+}
+
+
+/* =========================
+   title
+========================= */
+
+.title {
+    position: absolute;
+    z-index: 5;
+
+    top: 50%;
+    left: 50%;
+
+    width: min(90%, 700px);
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+
+    letter-spacing: 3px;
+    text-transform: lowercase;
+
+    opacity: .65;
+}
+
+h1 {
+    font-size: clamp(48px, 8vw, 88px);
+    font-weight: 300;
+
+    line-height: .9;
+    letter-spacing: 5px;
+
+    text-shadow: 0 8px 35px rgba(0,0,0,.2);
+}
+
+h1 strong {
+    display: block;
+
+    font-weight: 500;
+    letter-spacing: 12px;
+
+    margin-left: 12px;
+}
+
+.subtitle {
+    margin-top: 25px;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    opacity: .65;
+}
+
+
+/* =========================
+   buttons
+========================= */
+
+.buttons {
+    margin-top: 42px;
+}
+
+.begin {
+    display: block;
+
+    margin: auto;
+
+    padding: 15px 29px;
+
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 2px;
+
+    background: rgba(241, 255, 255, .9);
+
+    color: #073449;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.begin span {
+    display: inline-block;
+    margin-right: 8px;
+
+    transition: transform .3s ease;
+}
+
+.begin:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.begin:hover span {
+    transform: translateY(3px);
+}
+
+.howto {
+    display: block;
+
+    margin: 18px auto 0;
+
+    border: none;
+    background: none;
+
+    color: white;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    opacity: .55;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.howto:hover {
+    opacity: 1;
+}
+
+
+/* =========================
+   bottom note
+========================= */
+
+.bottom-note {
+    position: absolute;
+    z-index: 5;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: .35;
+}
+
+
+/* =========================
+   ocean floor
+========================= */
+
+.seafloor {
+    position: absolute;
+    bottom: -65px;
+    left: -5%;
+
+    width: 110%;
+    height: 150px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #154854,
+            #082f40 70%,
+            #052536
+        );
+
+    border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+}
+
+
+/* plants */
+
+.plant {
+    position: absolute;
+    bottom: 55px;
+
+    width: 7px;
+    height: 70px;
+
+    border-radius: 100% 0 100% 0;
+
+    background: #0c5b60;
+
+    transform-origin: bottom;
+
+    animation: sway 3s ease-in-out infinite alternate;
+}
+
+.plant-one { left: 9%; }
+.plant-two { left: 19%; height: 48px; animation-delay: .6s; }
+.plant-three { right: 15%; height: 78px; animation-delay: 1s; }
+.plant-four { right: 6%; height: 53px; animation-delay: .3s; }
+
+@keyframes sway {
+    from { transform: rotate(-8deg); }
+    to { transform: rotate(8deg); }
+}
+
+
+/* rocks */
+
+.rock {
+    position: absolute;
+    bottom: 42px;
+
+    width: 65px;
+    height: 27px;
+
+    border-radius: 50% 50% 35% 35%;
+
+    background: #092f3b;
+}
+
+.rock-one { left: 31%; }
+.rock-two { right: 28%; width: 90px; }
+
+
+/* trash */
+
+.trash {
+    position: absolute;
+
+    color: rgba(170, 220, 220, .35);
+
+    font-size: 17px;
+}
+
+.bottle {
+    left: 43%;
+    bottom: 59px;
+    transform: rotate(20deg);
+}
+
+.can {
+    right: 42%;
+    bottom: 53px;
+}
+
+
+/* =========================
+   how-to overlay
+========================= */
+
+.overlay {
+    position: fixed;
+    z-index: 50;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(1, 24, 36, .35);
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .35s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.how-panel {
+    position: relative;
+
+    width: min(90%, 460px);
+
+    padding: 42px;
+
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 4px;
+
+    background: rgba(5, 46, 61, .72);
+
+    box-shadow: 0 20px 80px rgba(0,0,0,.2);
+
+    transform: translateY(20px);
+
+    transition: .35s ease;
+}
+
+.overlay.active .how-panel {
+    transform: translateY(0);
+}
+
+.close {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    border: none;
+    background: none;
+
+    color: white;
+
+    font-size: 22px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    opacity: .5;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.panel-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    opacity: .5;
+}
+
+h2 {
+    margin-top: 8px;
+
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.instructions {
+    margin-top: 30px;
+}
+
+.instructions div {
+    display: flex;
+    gap: 20px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.instructions span {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    opacity: .4;
+}
+
+.instructions p {
+    font-size: 12px;
+    opacity: .75;
+}
+
+.controls {
+    margin-top: 25px;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+
+    line-height: 1.7;
+
+    opacity: .4;
+}
+
+
+/* =========================
+   loading
+========================= */
+
+.loading-screen {
+    position: fixed;
+    z-index: 100;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #052b3c;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .6s ease;
+}
+
+.loading-screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-content {
+    width: min(80%, 300px);
+    text-align: center;
+}
+
+.loading-content p {
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.loading-line {
+    width: 100%;
+    height: 1px;
+
+    background: rgba(255,255,255,.15);
+}
+
+.loading-line span {
+    display: block;
+
+    width: 0%;
+    height: 100%;
+
+    background: rgba(255,255,255,.8);
+
+    transition: width .15s linear;
+}
+
+.loading-content small {
+    display: block;
+
+    margin-top: 13px;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+
+    opacity: .5;
+}
+
+
+/* mobile */
+
+@media (max-width: 600px) {
+
+    h1 {
+        letter-spacing: 3px;
+    }
+
+    h1 strong {
+        letter-spacing: 7px;
+        margin-left: 7px;
+    }
+
+    .how-panel {
+        padding: 32px 25px;
+    }
+
+}
