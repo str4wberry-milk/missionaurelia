@@ -8,15 +8,19 @@ const loadingProgress = document.getElementById("loadingProgress");
 const loadingText = document.getElementById("loadingText");
 
 
-// ---------------- how to play ----------------
+// ==================================================
+// how to play
+// ==================================================
 
 howBtn.addEventListener("click", () => {
   howOverlay.classList.add("active");
 });
 
+
 closeBtn.addEventListener("click", () => {
   howOverlay.classList.remove("active");
 });
+
 
 howOverlay.addEventListener("click", (event) => {
   if (event.target === howOverlay) {
@@ -25,7 +29,9 @@ howOverlay.addEventListener("click", (event) => {
 });
 
 
-// ---------------- begin mission ----------------
+// ==================================================
+// begin mission
+// ==================================================
 
 beginBtn.addEventListener("click", () => {
 
@@ -49,6 +55,7 @@ beginBtn.addEventListener("click", () => {
 
     if (progress >= 100) {
       progress = 100;
+
       clearInterval(interval);
     }
 
@@ -59,7 +66,8 @@ beginBtn.addEventListener("click", () => {
       loadingMessages.length - 1
     );
 
-    loadingText.textContent = loadingMessages[messageIndex];
+    loadingText.textContent =
+      loadingMessages[messageIndex];
 
   }, 100);
 
